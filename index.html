@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>图片选择demo</title>
+  <!--引入css-->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/cropper.min.css">
+  <link rel="stylesheet" href="css/mycropper.css">
+</head>
+<body>
+<!--图片显示容器开始-->
+<div id="img-container">
+  <div class="add-pic">
+    <input type="file" id="inputImage" name="file" accept=".jpg,.jpeg,.png">
+    <i></i>
+  </div>
+  <!--图片显示容器结束-->
+</div>
+<!-- 半透明遮罩层 -->
+<div class="my-container-mask"></div>
+<!--裁剪图片开始-->
+<div class="my-container">
+  <div class="my-container-header">图片裁剪<i id="close" title="裁剪"></i></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <!-- <h3>Demo:</h3> -->
+        <div class="img-container">
+          <img id="image">
+        </div>
+      </div>
+      <div class="col-md-3">
+        <!-- <h3>Preview:</h3> -->
+        <div class="docs-preview clearfix">
+          <div class="img-preview preview-lg"></div>
+          <div class="img-preview preview-md"></div>
+          <div class="img-preview preview-sm"></div>
+          <div class="img-preview preview-xs"></div>
+        </div>
+        <div class="docs-data">
+          <div class="input-group input-group-sm">
+            <span class="input-group-prepend">
+              <label class="input-group-text" for="dataX">X</label>
+            </span>
+            <input type="text" class="form-control" id="dataX" placeholder="x">
+            <span class="input-group-append">
+              <span class="input-group-text">px</span>
+            </span>
+          </div>
+          <div class="input-group input-group-sm">
+            <span class="input-group-prepend">
+              <label class="input-group-text" for="dataY">Y</label>
+            </span>
+            <input type="text" class="form-control" id="dataY" placeholder="y">
+            <span class="input-group-append">
+              <span class="input-group-text">px</span>
+            </span>
+          </div>
+          <div class="input-group input-group-sm">
+            <span class="input-group-prepend">
+              <label class="input-group-text" for="dataWidth">Width</label>
+            </span>
+            <input type="text" class="form-control" id="dataWidth" placeholder="width">
+            <span class="input-group-append">
+              <span class="input-group-text">px</span>
+            </span>
+          </div>
+          <div class="input-group input-group-sm">
+            <span class="input-group-prepend">
+              <label class="input-group-text" for="dataHeight">Height</label>
+            </span>
+            <input type="text" class="form-control" id="dataHeight" placeholder="height">
+            <span class="input-group-append">
+              <span class="input-group-text">px</span>
+            </span>
+          </div>
+          <div class="input-group input-group-sm">
+            <span class="input-group-prepend">
+              <label class="input-group-text" for="dataRotate">Rotate</label>
+            </span>
+            <input type="text" class="form-control" id="dataRotate" placeholder="rotate">
+            <span class="input-group-append">
+              <span class="input-group-text">deg</span>
+            </span>
+          </div>
+          <div class="input-group input-group-sm">
+            <span class="input-group-prepend">
+              <label class="input-group-text" for="dataScaleX">ScaleX</label>
+            </span>
+            <input type="text" class="form-control" id="dataScaleX" placeholder="scaleX">
+          </div>
+          <div class="input-group input-group-sm">
+            <span class="input-group-prepend">
+              <label class="input-group-text" for="dataScaleY">ScaleY</label>
+            </span>
+            <input type="text" class="form-control" id="dataScaleY" placeholder="scaleY">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-9 docs-buttons">
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary" data-method="rotate" data-option="-45" title="Rotate Left">
+            旋转-45°
+          </button>
+          <button type="button" class="btn btn-primary" data-method="rotate" data-option="45" title="Rotate Right">
+            旋转45°
+          </button>
+        </div>
+        <!--获取数据 -->
+        <div class="btn-group btn-group-crop">
+          <button type="button" class="btn btn-success" data-method="getCroppedCanvas"
+                  data-option="{ &quot;maxWidth&quot;: 4096, &quot;maxHeight&quot;: 4096 }">
+            <span class="docs-tooltip" data-toggle="tooltip" data-animation="false"
+                  title="$().cropper(&quot;getCroppedCanvas&quot;, { maxWidth: 4096, maxHeight: 4096 })">
+              确定
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--裁剪图片结束-->
+
+<!-- 引入js -->
+<script src="js/jquery-3.3.1.slim.min.js"></script>
+<script src="js/cropper.min.js"></script>
+<script src="js/jquery-cropper.min.js"></script>
+<script src="js/mycropper.js"></script>
+</body>
+</html>
